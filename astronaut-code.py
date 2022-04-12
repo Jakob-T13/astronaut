@@ -1,4 +1,5 @@
 import csv
+import random
 
 class Astronaut:
     def __init__(self,name,flighthrs,status):
@@ -32,4 +33,13 @@ for i in csvreader:
     astro = Astronaut(i[0],int(i[13]),i[3])
     astronaut_lst.append(astro)
     
-print(str(astronaut_lst[0]))
+print(f"Name: {astronaut_lst[0].name}\nFlight Hours: {astronaut_lst[0].flighthrs}\nStatus: {astronaut_lst[0].status}")
+
+astro1 = random.choice(astronaut_lst)
+astro2 = random.choice(astronaut_lst)
+print(f"{astro1.name} has more flight hours than {astro2.name}: {astro1 > astro2}")
+
+for i in astronaut_lst:
+    print(i)
+    
+f.close()
